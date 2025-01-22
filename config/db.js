@@ -6,6 +6,7 @@
 const connect =  await mongoose.connect(process.env.MONGODB_URL);
          console.log("connection to mongodb successfully")
      }catch(e){
+        console.log(e)
          process.exit(1)
      }
  }
