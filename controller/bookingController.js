@@ -13,15 +13,15 @@
 
  const bookingGround = asyncHandler(async (req, res) => {
      
-     if(!req.Truf.id) {
-        res.status(400);
-        throw new Error("truf id not invalide");   
-    }
+    //  if(!req.Truf.id) {
+    //     res.status(400);
+    //     throw new Error("truf id not invalide");   
+    // }
 
-     if(!req.body.date) {
-        res.status(400);
-        throw new Error("please full  all field ");
-     }
+    //  if(!req.body.date) {
+    //     res.status(400);
+    //     throw new Error("please full  all field ");
+    //  }
         
     const { date, startetime, endtime, totalAmount } = req.body;  
        console.log(req.user);
@@ -59,23 +59,23 @@
     
 });
 
- const getBooking = asyncHandler(async(req,res) =>{
+//  const getBooking = asyncHandler(async(req,res) =>{
    
-         const { user_id, truf_id } = req.query;
+//          const { user_id, truf_id } = req.query;
     
-         if (!user_id || !truf_id) {
-             return res.status(400).json({ error: 'User ID and Ground ID are required.' });
-         }
+//          if (!user_id || !truf_id) {
+//              return res.status(400).json({ error: 'User ID and Ground ID are required.' });
+//          }
     
         
-         const booking = bookings.find(b => b.user_id == user_id && b.ground_id == ground_id);
+//          const booking = bookings.find(b => b.user_id == user_id && b.ground_id == ground_id);
     
-         if (booking) {
-             res.json(booking);
-         } else {
-             res.status(404).json(null);
-         }
-     });
+//          if (booking) {
+//              res.json(booking);
+//          } else {
+//              res.status(404).json(null);
+//          }
+//      });
 
 
 
@@ -116,4 +116,4 @@ function simulatePayment(amound) {
 
 
 
- module.exports = { getAllGround, getBooking, bookingGround, bookingcancel}
+ module.exports = { getAllGround,bookingGround, bookingcancel}
